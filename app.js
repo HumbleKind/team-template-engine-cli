@@ -90,6 +90,43 @@ function createManager() {
     });
 }
 
+function createEngineer() {
+    inquirer.prompt(
+        [
+            {
+                type: "input",
+                name: "EngineerName",
+                message: "Please provide the engineer's name:",
+                validate: function(answer) {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character."
+                }
+            },
+            {
+                type: "input",
+                name: "engineerId",
+                message: "Please enter an engineer ID:"
+            },
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "Please enter the engineer's email:"
+            },
+            {
+                type: "input",
+                name: "engineerGithub",
+                message: "Please enter the engineer's Github username:"
+            }
+        ]
+    ).then(function(answers) {
+        const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
+        teamMembers.push(Engineer);
+        menuItems();
+    });
+}
+
 createManager();
 
 // After the user has input all employees desired, call the `render` function (required
