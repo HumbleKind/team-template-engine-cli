@@ -95,7 +95,7 @@ function createEngineer() {
         [
             {
                 type: "input",
-                name: "EngineerName",
+                name: "engineerName",
                 message: "Please provide the engineer's name:",
                 validate: function(answer) {
                     if (answer !== "") {
@@ -121,8 +121,8 @@ function createEngineer() {
             }
         ]
     ).then(function(answers) {
-        const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
-        teamMembers.push(Engineer);
+        const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
+        teamMembers.push(engineer);
         menuItems();
     });
 }
@@ -158,8 +158,8 @@ function createIntern() {
             }
         ]
     ).then(function(answers) {
-        const Intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
-        teamMembers.push(Intern);
+        const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
+        teamMembers.push(intern);
         menuItems();
     });
 }
