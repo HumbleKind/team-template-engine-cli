@@ -127,6 +127,43 @@ function createEngineer() {
     });
 }
 
+function createIntern() {
+    inquirer.prompt(
+        [
+            {
+                type: "input",
+                name: "internName",
+                message: "Please provide the Intern's name:",
+                validate: function(answer) {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character."
+                }
+            },
+            {
+                type: "input",
+                name: "internId",
+                message: "Please enter an Intern ID:"
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "Please enter the Intern's email:"
+            },
+            {
+                type: "input",
+                name: "internSchool",
+                message: "Please enter the Intern's school name:"
+            }
+        ]
+    ).then(function(answers) {
+        const Intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
+        teamMembers.push(Intern);
+        menuItems();
+    });
+}
+
 createManager();
 
 // After the user has input all employees desired, call the `render` function (required
