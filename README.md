@@ -25,7 +25,7 @@ From the command line ...
 ## Usage
 1. run node app.js
 
-![Team Template Engine - Example Prompts](screen-shot_2.png)
+![Team Template Engine - Example Prompts](screen-shot_2.png)  
 2. Enter relevant info when prompted.
 
 3. Push generated 'output' directory and 'team.html' file to GitHub.
